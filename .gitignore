@@ -1,0 +1,9 @@
+# Ignorer les dossiers de compilation (build) pour tous les sous-projets Rust
+**/target/
+
+# Ignorer les fichiers de sauvegarde générés par rustfmt
+**/*.rs.bk
+
+# Ignorer les fichiers de log de plantage
+crash.log
+*.pdb

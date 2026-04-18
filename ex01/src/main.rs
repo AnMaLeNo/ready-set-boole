@@ -23,6 +23,13 @@ fn multiplier(a: u32, b:u32) -> u32 {
     resultat
 }
 
+
 fn main() {
-    println!("{}", multiplier(3, 11));
+    for a in 0..100u32 {
+        for b in 0..100u32 {
+            if a.wrapping_mul(b) != multiplier(a, b) {
+                println!("{} * {} != {}", a, b, multiplier(a, b));
+            }
+        }
+    }
 }

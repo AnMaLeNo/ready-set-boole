@@ -16,5 +16,11 @@ fn adder(a: u32, b: u32) -> u32 {
 }
 
 fn main() {
-    println!("{}", adder(21, 21));
+    for a in 0..1000u32 {
+        for b in u32::MAX-1000..u32::MAX {
+            if a.wrapping_add(b) != adder(a, b) {
+                println!("{} + {} != {}", a, b, adder(a, b));
+            }
+        }
+    }
 }

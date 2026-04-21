@@ -15,18 +15,20 @@ fn adder(a: u32, b: u32) -> u32 {
     resultat
 }
 
-fn multiplier(a: u32, b:u32) -> u32 {
-    let mut resultat :u32 = 0;
-    for _i in 0..b {
-        resultat = adder(resultat, a);
+fn multiplier(a: u32, b: u32) -> u32 {
+
+    let mut resultat: u32 = 0;
+    for i in 0..32 {
+        if (b & (1 << i)) != 0  {
+            resultat = adder(resultat, a << i);
+        }
     }
     resultat
 }
 
-
 fn main() {
-    for a in 0..100u32 {
-        for b in 0..100u32 {
+    for a in 0..1000u32 {
+        for b in 0..1000u32 {
             if a.wrapping_mul(b) != multiplier(a, b) {
                 println!("{} * {} != {}", a, b, multiplier(a, b));
             }

@@ -1,3 +1,4 @@
+// Complexsity: O(1)
 fn adder(a: u32, b: u32) -> u32 {
     let mut next_retenu: u32;
     let mut retenu: u32 = 0;
